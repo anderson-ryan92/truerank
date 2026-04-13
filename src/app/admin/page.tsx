@@ -100,6 +100,12 @@ export default async function AdminPage() {
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <Link
+                    href={`/admin/products/${product.slug}/details`}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Edit details
+                  </Link>
+                  <Link
                     href={`/admin/products/${product.slug}/lab-report`}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
