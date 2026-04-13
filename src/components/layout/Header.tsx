@@ -1,6 +1,21 @@
 import Link from 'next/link'
+import { createSupabaseServerClient } from '@/lib/supabase-server'
+import { HeaderUserMenu } from './HeaderUserMenu'
 
-export function Header() {
+export async function Header() {
+  const supabase = await createSupabaseServerClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  let displayName: string | null = null
+  if (user) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('display_name')
+      .eq('id', user.id)
+      .single()
+    displayName = profile?.display_name || user.email || null
+  }
+
   return (
     <header className="border-b border-gray-800">
       <div className="max-w-5xl mx-auto px-8 py-5 flex items-center justify-between">
@@ -20,6 +35,16 @@ export function Header() {
           <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
             About
           </Link>
+          {user ? (
+            <HeaderUserMenu displayName={displayName} />
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition-colors"
+            >
+              Log in
+            </Link>
+          )}
         </nav>
       </div>
     </header>

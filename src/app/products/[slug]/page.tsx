@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import { SaveButton } from '@/components/product/SaveButton'
 import type { Category, Product, LabReport, Score } from '@/types/database'
 
 type PageProps = {
@@ -49,31 +50,34 @@ export default async function ProductPage({ params }: PageProps) {
     <main className="min-h-screen p-8 max-w-4xl mx-auto">
       <nav className="mb-8 text-sm text-gray-500">
         <Link href="/" className="hover:text-gray-300">Home</Link>
-        {categoryTyped && (
+        {categoryTyped ? (
           <>
             <span className="mx-2">/</span>
             <Link href={`/categories/${categoryTyped.slug}`} className="hover:text-gray-300">
               {categoryTyped.name}
             </Link>
           </>
-        )}
+        ) : null}
         <span className="mx-2">/</span>
         <span className="text-gray-300">{productTyped.name}</span>
       </nav>
 
-      <header className="mb-12">
-        <h1 className="text-4xl font-bold mb-2">{productTyped.name}</h1>
-        {productTyped.brand && (
-          <p className="text-xl text-gray-500">{productTyped.brand}</p>
-        )}
-        {productTyped.purchase_location && (
-          <p className="text-sm text-gray-600 mt-2">
-            Purchased at: {productTyped.purchase_location}
-            {productTyped.purchase_price_cents && (
-              <> · ${(productTyped.purchase_price_cents / 100).toFixed(2)}</>
-            )}
-          </p>
-        )}
+      <header className="mb-12 flex justify-between items-start gap-4">
+        <div>
+          <h1 className="text-4xl font-bold mb-2">{productTyped.name}</h1>
+          {productTyped.brand ? (
+            <p className="text-xl text-gray-500">{productTyped.brand}</p>
+          ) : null}
+          {productTyped.purchase_location ? (
+            <p className="text-sm text-gray-600 mt-2">
+              Purchased at: {productTyped.purchase_location}
+              {productTyped.purchase_price_cents ? (
+                <> · ${(productTyped.purchase_price_cents / 100).toFixed(2)}</>
+              ) : null}
+            </p>
+          ) : null}
+        </div>
+        <SaveButton productId={productTyped.id} />
       </header>
 
       <section className="mb-12">
@@ -109,25 +113,25 @@ export default async function ProductPage({ params }: PageProps) {
                     {new Date(report.test_date).toLocaleDateString()}
                   </span>
                 </div>
-                {report.lab_location && (
+                {report.lab_location ? (
                   <p className="text-sm text-gray-500 mb-3">{report.lab_location}</p>
-                )}
+                ) : null}
                 <div className="flex gap-4 text-sm">
-                  {report.report_pdf_url && (
+                  {report.report_pdf_url ? (
                     <a href={report.report_pdf_url} className="text-blue-400 hover:underline">
                       Download lab report (PDF)
                     </a>
-                  )}
-                  {report.chain_of_custody_url && (
+                  ) : null}
+                  {report.chain_of_custody_url ? (
                     <a href={report.chain_of_custody_url} className="text-blue-400 hover:underline">
                       Chain of custody
                     </a>
-                  )}
-                  {report.video_url && (
+                  ) : null}
+                  {report.video_url ? (
                     <a href={report.video_url} className="text-blue-400 hover:underline">
                       Watch testing video
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </div>
             ))}
@@ -148,7 +152,7 @@ function ScoreCard({ label, value }: { label: string; value: number | null }) {
       <p className="text-sm text-gray-500 mb-1">{label}</p>
       <p className="text-3xl font-bold">
         {value !== null ? value : '—'}
-        {value !== null && <span className="text-lg text-gray-500">/100</span>}
+        {value !== null ? <span className="text-lg text-gray-500">/100</span> : null}
       </p>
     </div>
   )
