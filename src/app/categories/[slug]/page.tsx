@@ -52,26 +52,28 @@ export default async function CategoryPage({ params }: PageProps) {
   return (
     <main className="min-h-screen px-8 py-16 max-w-4xl mx-auto">
       <nav className="mb-8 text-sm">
-        <Link href="/" className="text-gray-500 hover:text-gray-300">
+        <Link href="/" className="text-[var(--text-tertiary)] hover:text-[var(--foreground)]">
           ← All categories
         </Link>
       </nav>
 
-      <header className="mb-10">
-        <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Category</p>
-        <h1 className="text-5xl font-medium mb-3 tracking-tight">{cat.name}</h1>
+      <header className="mb-12">
+        <p className="text-xs text-[var(--text-tertiary)] uppercase tracking-wider mb-2">Category</p>
+        <h1 className="font-serif text-6xl font-medium mb-3 tracking-tight text-[var(--foreground)]">
+          {cat.name}
+        </h1>
         {cat.description ? (
-          <p className="text-lg text-gray-400 max-w-2xl">{cat.description}</p>
+          <p className="text-lg text-[var(--text-secondary)] max-w-2xl">{cat.description}</p>
         ) : null}
       </header>
 
       {ranked.length > 0 ? (
         <section className="mb-16">
           <div className="flex items-baseline justify-between mb-6">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+            <h2 className="text-xs font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">
               Highest ranked
             </h2>
-            <span className="text-xs text-gray-600">
+            <span className="text-xs text-[var(--text-tertiary)]">
               {ranked.length} {ranked.length === 1 ? 'product' : 'products'} tested
             </span>
           </div>
@@ -96,10 +98,10 @@ export default async function CategoryPage({ params }: PageProps) {
       {unranked.length > 0 ? (
         <section>
           <div className="flex items-baseline justify-between mb-6">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+            <h2 className="text-xs font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">
               Not yet tested
             </h2>
-            <span className="text-xs text-gray-600">
+            <span className="text-xs text-[var(--text-tertiary)]">
               {unranked.length} {unranked.length === 1 ? 'product' : 'products'}
             </span>
           </div>
@@ -113,9 +115,9 @@ export default async function CategoryPage({ params }: PageProps) {
       ) : null}
 
       {ranked.length === 0 && unranked.length === 0 ? (
-        <div className="p-12 border border-dashed border-gray-800 rounded-2xl text-center">
-          <p className="text-gray-400 mb-2">No products in {cat.name.toLowerCase()} yet.</p>
-          <p className="text-sm text-gray-500">Check back soon.</p>
+        <div className="p-12 border border-dashed border-[var(--border)] rounded-2xl text-center">
+          <p className="text-[var(--text-secondary)] mb-2">No products in {cat.name.toLowerCase()} yet.</p>
+          <p className="text-sm text-[var(--text-tertiary)]">Check back soon.</p>
         </div>
       ) : null}
     </main>
@@ -128,22 +130,24 @@ function HeroCard({ product, score }: { product: Product; score: Score }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="block bg-gray-950 border border-gray-800 rounded-2xl p-8 mb-8 hover:border-gray-700 transition-colors"
+      className="block bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-8 mb-8 hover:border-[var(--border-strong)] transition-colors"
     >
       <div className="grid grid-cols-1 md:grid-cols-[180px_1fr_auto] gap-8 items-center">
-        <div className="aspect-square bg-black border border-gray-900 rounded-xl flex items-center justify-center overflow-hidden">
+        <div className="aspect-square bg-[var(--background)] border border-[var(--border)] rounded-xl flex items-center justify-center overflow-hidden">
           {product.image_url ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={product.image_url} alt={product.name} className="w-full h-full object-contain p-6" />
           ) : (
-            <span className="text-xs text-gray-700">No image</span>
+            <span className="text-xs text-[var(--text-tertiary)]">No image</span>
           )}
         </div>
 
         <div>
-          <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">No. 1</p>
-          <h3 className="text-3xl font-medium mb-1 tracking-tight">{product.name}</h3>
-          <p className="text-sm text-gray-400 mb-5">
+          <p className="text-xs text-[var(--text-tertiary)] uppercase tracking-wider mb-2">No. 1</p>
+          <h3 className="font-serif text-3xl font-medium mb-1 tracking-tight text-[var(--foreground)]">
+            {product.name}
+          </h3>
+          <p className="text-sm text-[var(--text-secondary)] mb-5">
             {product.brand ? `${product.brand}` : ''}
             {details.subcategory ? ` · ${details.subcategory}` : ''}
           </p>
@@ -157,10 +161,10 @@ function HeroCard({ product, score }: { product: Product; score: Score }) {
         </div>
 
         <div className="text-center">
-          <div className="text-6xl font-medium tracking-tight leading-none tabular-nums">
+          <div className="font-serif text-6xl font-medium tracking-tight leading-none tabular-nums text-[var(--foreground)]">
             {score.overall_score}
           </div>
-          <div className="text-xs text-gray-500 uppercase tracking-wider mt-2">Overall</div>
+          <div className="text-xs text-[var(--text-tertiary)] uppercase tracking-wider mt-2">Overall</div>
         </div>
       </div>
     </Link>
@@ -170,8 +174,8 @@ function HeroCard({ product, score }: { product: Product; score: Score }) {
 function AxisStat({ label, value }: { label: string; value: number | null }) {
   return (
     <div>
-      <p className="text-xs text-gray-500 mb-1">{label}</p>
-      <p className="text-xl font-medium tabular-nums">{value !== null ? value : '—'}</p>
+      <p className="text-xs text-[var(--text-tertiary)] mb-1">{label}</p>
+      <p className="text-xl font-medium tabular-nums text-[var(--foreground)]">{value !== null ? value : '—'}</p>
     </div>
   )
 }
@@ -190,25 +194,25 @@ function RankRow({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="grid grid-cols-[32px_56px_1fr_auto] gap-4 items-center py-5 border-t border-gray-900 last:border-b hover:bg-gray-950/40 transition-colors px-2 -mx-2 rounded-lg"
+      className="grid grid-cols-[32px_56px_1fr_auto] gap-4 items-center py-5 border-t border-[var(--border)] last:border-b hover:bg-[var(--surface-hover)] transition-colors px-2 -mx-2 rounded-lg"
     >
-      <div className="text-sm text-gray-600 tabular-nums">
+      <div className="text-sm text-[var(--text-tertiary)] tabular-nums">
         {rank.toString().padStart(2, '0')}
       </div>
-      <div className="w-14 h-14 bg-gray-950 border border-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
+      <div className="w-14 h-14 bg-[var(--surface)] border border-[var(--border)] rounded-lg overflow-hidden flex items-center justify-center">
         {product.image_url ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={product.image_url} alt={product.name} className="w-full h-full object-contain p-2" />
         ) : null}
       </div>
       <div className="min-w-0">
-        <p className="font-medium truncate">{product.name}</p>
-        <p className="text-sm text-gray-500 truncate">
+        <p className="font-medium truncate text-[var(--foreground)]">{product.name}</p>
+        <p className="text-sm text-[var(--text-tertiary)] truncate">
           {product.brand ? `${product.brand}` : ''}
           {details.subcategory ? ` · ${details.subcategory}` : ''}
         </p>
       </div>
-      <div className="text-2xl font-medium tabular-nums tracking-tight">
+      <div className="text-2xl font-medium tabular-nums tracking-tight text-[var(--foreground)]">
         {score.overall_score}
       </div>
     </Link>
@@ -219,19 +223,19 @@ function UnrankedRow({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="grid grid-cols-[56px_1fr_auto] gap-4 items-center py-4 border-t border-gray-900 last:border-b hover:bg-gray-950/40 transition-colors px-2 -mx-2 rounded-lg"
+      className="grid grid-cols-[56px_1fr_auto] gap-4 items-center py-4 border-t border-[var(--border)] last:border-b hover:bg-[var(--surface-hover)] transition-colors px-2 -mx-2 rounded-lg"
     >
-      <div className="w-14 h-14 bg-gray-950 border border-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
+      <div className="w-14 h-14 bg-[var(--surface)] border border-[var(--border)] rounded-lg overflow-hidden flex items-center justify-center">
         {product.image_url ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={product.image_url} alt={product.name} className="w-full h-full object-contain p-2" />
         ) : null}
       </div>
       <div className="min-w-0">
-        <p className="font-medium truncate">{product.name}</p>
-        {product.brand ? <p className="text-sm text-gray-500 truncate">{product.brand}</p> : null}
+        <p className="font-medium truncate text-[var(--foreground)]">{product.name}</p>
+        {product.brand ? <p className="text-sm text-[var(--text-tertiary)] truncate">{product.brand}</p> : null}
       </div>
-      <div className="text-xs text-gray-600 uppercase tracking-wider">Untested</div>
+      <div className="text-xs text-[var(--text-tertiary)] uppercase tracking-wider">Untested</div>
     </Link>
   )
 }

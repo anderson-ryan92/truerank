@@ -51,7 +51,7 @@ export function SearchBar() {
     <div ref={containerRef} className="relative w-full max-w-2xl mx-auto">
       <div className="relative">
         <svg
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-tertiary)]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -67,16 +67,16 @@ export function SearchBar() {
           }}
           onFocus={() => setIsOpen(true)}
           placeholder="Search a product or brand"
-          className="w-full pl-12 pr-4 py-4 bg-gray-900 border border-gray-800 rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
+          className="w-full pl-12 pr-4 py-4 bg-[var(--surface)] border border-[var(--border)] rounded-full text-[var(--foreground)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-[var(--border-strong)] transition-colors"
         />
       </div>
 
       {isOpen && query.trim().length >= 2 && (
-        <div className="absolute top-full mt-2 w-full bg-gray-950 border border-gray-800 rounded-lg shadow-2xl overflow-hidden z-50">
+        <div className="absolute top-full mt-2 w-full bg-[var(--surface)] border border-[var(--border)] rounded-lg shadow-lg overflow-hidden z-50">
           {isLoading ? (
-            <div className="p-4 text-sm text-gray-500 text-center">Searching...</div>
+            <div className="p-4 text-sm text-[var(--text-tertiary)] text-center">Searching...</div>
           ) : results.length === 0 ? (
-            <div className="p-4 text-sm text-gray-500 text-center">
+            <div className="p-4 text-sm text-[var(--text-tertiary)] text-center">
               No products found for &quot;{query}&quot;
             </div>
           ) : (
@@ -86,22 +86,22 @@ export function SearchBar() {
                   <Link
                     href={`/products/${product.slug}`}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-4 p-4 hover:bg-gray-900 transition-colors border-b border-gray-800 last:border-b-0"
+                    className="flex items-center gap-4 p-4 hover:bg-[var(--surface-hover)] transition-colors border-b border-[var(--border)] last:border-b-0"
                   >
-                    <div className="w-12 h-12 bg-gray-800 rounded flex-shrink-0 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[var(--background)] border border-[var(--border)] rounded flex-shrink-0 flex items-center justify-center">
                       {product.image_url ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={product.image_url} alt={product.name} className="w-full h-full object-cover rounded" />
+                        <img src={product.image_url} alt={product.name} className="w-full h-full object-contain rounded" />
                       ) : (
-                        <span className="text-xs text-gray-600">No image</span>
+                        <span className="text-xs text-[var(--text-tertiary)]">No image</span>
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-white truncate">{product.name}</p>
+                      <p className="text-sm font-medium text-[var(--foreground)] truncate">{product.name}</p>
                       {product.categories ? (
-                        <p className="text-xs text-gray-500">{product.categories.name}</p>
+                        <p className="text-xs text-[var(--text-tertiary)]">{product.categories.name}</p>
                       ) : product.brand ? (
-                        <p className="text-xs text-gray-500">{product.brand}</p>
+                        <p className="text-xs text-[var(--text-tertiary)]">{product.brand}</p>
                       ) : null}
                     </div>
                   </Link>

@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surface colors */
+  --background: #F5F3EE;
+  --surface: #FFFFFF;
+  --surface-hover: #FAF9F5;
+
+  /* Borders */
+  --border: #E5E2D9;
+  --border-strong: #D4D0C5;
+
+  /* Text */
+  --foreground: #1A1A1A;
+  --text-secondary: #6B6B66;
+  --text-tertiary: #9A9893;
+
+  /* Semantic */
+  --accent: #1A1A1A;
+  --accent-foreground: #FFFFFF;
+  --good: #2D7D4F;
+  --good-bg: #E8F0EA;
+  --warning: #B8860B;
+  --warning-bg: #F5EFE0;
+  --bad: #B8423D;
+  --bad-bg: #F5E6E5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
 }

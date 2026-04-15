@@ -17,19 +17,19 @@ export async function Header() {
   }
 
   return (
-    <header className="border-b border-gray-800">
+    <header className="border-b border-[var(--border)] bg-[var(--background)]">
       <div className="max-w-5xl mx-auto px-8 py-5 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight">
+        <Link href="/" className="font-serif text-2xl font-medium tracking-tight text-[var(--foreground)]">
           Optimal Source
         </Link>
         <nav className="flex items-center gap-8 text-sm">
-          <Link href="/lab-reports" className="text-gray-400 hover:text-white transition-colors">
+          <Link href="/lab-reports" className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">
             Lab Reports
           </Link>
-          <Link href="/methodology" className="text-gray-400 hover:text-white transition-colors">
+          <Link href="/methodology" className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">
             Methodology
           </Link>
-          <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+          <Link href="/about" className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">
             About
           </Link>
           {user ? (
@@ -37,7 +37,7 @@ export async function Header() {
           ) : (
             <Link
               href="/login"
-              className="px-4 py-2 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition-colors"
+              className="px-4 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-medium hover:opacity-90 transition-opacity"
             >
               Log in
             </Link>

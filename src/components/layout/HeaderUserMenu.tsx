@@ -37,34 +37,34 @@ export function HeaderUserMenu({ displayName }: Props) {
     <div ref={menuRef} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-9 h-9 rounded-full bg-gray-700 flex items-center justify-center text-sm font-semibold hover:bg-gray-600 transition-colors"
+        className="w-9 h-9 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] flex items-center justify-center text-sm font-semibold hover:opacity-90 transition-opacity"
       >
         {initial}
       </button>
       {isOpen ? (
-        <div className="absolute right-0 mt-2 w-56 bg-gray-950 border border-gray-800 rounded-lg shadow-2xl overflow-hidden z-50">
+        <div className="absolute right-0 mt-2 w-56 bg-[var(--surface)] border border-[var(--border)] rounded-lg shadow-lg overflow-hidden z-50">
           {displayName ? (
-            <div className="px-4 py-3 border-b border-gray-800">
-              <p className="text-sm font-medium truncate">{displayName}</p>
+            <div className="px-4 py-3 border-b border-[var(--border)]">
+              <p className="text-sm font-medium truncate text-[var(--foreground)]">{displayName}</p>
             </div>
           ) : null}
           <Link
             href="/account"
             onClick={() => setIsOpen(false)}
-            className="block px-4 py-2 text-sm hover:bg-gray-900 transition-colors"
+            className="block px-4 py-2 text-sm text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors"
           >
             Account
           </Link>
           <Link
             href="/account/favorites"
             onClick={() => setIsOpen(false)}
-            className="block px-4 py-2 text-sm hover:bg-gray-900 transition-colors"
+            className="block px-4 py-2 text-sm text-[var(--foreground)] hover:bg-[var(--surface-hover)] transition-colors"
           >
             Saved products
           </Link>
           <button
             onClick={handleSignOut}
-            className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-900 transition-colors border-t border-gray-800"
+            className="w-full text-left px-4 py-2 text-sm text-[var(--bad)] hover:bg-[var(--surface-hover)] transition-colors border-t border-[var(--border)]"
           >
             Sign out
           </button>
