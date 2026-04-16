@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: PageProps) {
 
       {/* HERO: Image + Details + Overall Score */}
       <section className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-8 mb-12">
-        <div className="aspect-square bg-gray-950 border border-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
+        <div className="aspect-square bg-[var(--background)] border border-[var(--border)] rounded-xl flex items-center justify-center overflow-hidden">
           {p.image_url ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={p.image_url} alt={p.name} className="w-full h-full object-contain p-8" />
