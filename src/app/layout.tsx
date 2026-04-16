@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: 'Optimal Source',
+  title: 'TrueRank',
   description: 'Independent lab testing. Full chain of custody. Real data.',
 }
 

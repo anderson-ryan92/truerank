@@ -20,7 +20,7 @@ export async function Header() {
     <header className="border-b border-[var(--border)] bg-[var(--background)]">
       <div className="max-w-5xl mx-auto px-8 py-5 flex items-center justify-between">
         <Link href="/" className="font-serif text-2xl font-medium tracking-tight text-[var(--foreground)]">
-          Optimal Source
+          TrueRank
         </Link>
         <nav className="flex items-center gap-8 text-sm">
           <Link href="/lab-reports" className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">

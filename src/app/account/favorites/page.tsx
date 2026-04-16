@@ -28,7 +28,7 @@ export default async function FavoritesPage() {
   return (
     <main className="min-h-screen px-8 py-16 max-w-3xl mx-auto">
       <nav className="mb-8 text-sm">
-        <Link href="/account" className="text-gray-500 hover:text-gray-300">
+        <Link href="/account" className="text-gray-500 hover:text-[var(--foreground)]">
           ← Back to account
         </Link>
       </nav>
@@ -42,7 +42,7 @@ export default async function FavoritesPage() {
 
       {favoriteList.length === 0 ? (
         <div className="p-12 border border-dashed border-gray-700 rounded-lg text-center">
-          <p className="text-gray-400 mb-2">No saved products yet.</p>
+          <p className="text-[var(--text-secondary)] mb-2">No saved products yet.</p>
           <p className="text-sm text-gray-500 mb-6">
             Save products from their detail pages to see them here.
           </p>

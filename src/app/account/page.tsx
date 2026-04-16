@@ -29,7 +29,7 @@ export default async function AccountPage() {
       </header>
 
       <section className="mb-12">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Profile</h2>
+        <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4">Profile</h2>
         <div className="space-y-4 border border-gray-800 rounded-lg p-6">
           <Field label="Email" value={user.email || '—'} />
           <Field label="Display name" value={profile?.display_name || '—'} />
@@ -39,14 +39,14 @@ export default async function AccountPage() {
         </div>
         <Link
           href="/account/edit"
-          className="inline-block mt-4 text-sm text-gray-400 hover:text-white transition-colors"
+          className="inline-block mt-4 text-sm text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
         >
           Edit profile →
         </Link>
       </section>
 
       <section className="mb-12">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Quick links</h2>
+        <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4">Quick links</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Link href="/account/favorites" className="block p-6 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors">
             <h3 className="font-semibold mb-1">Saved products</h3>

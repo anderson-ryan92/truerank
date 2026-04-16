@@ -56,19 +56,17 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block mb-6">
-            <div className="w-12 h-12 mx-auto rounded-full border-2 border-white flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full" />
-            </div>
+            <span className="font-serif text-2xl font-medium text-[var(--foreground)]">TrueRank</span>
           </Link>
-          <h1 className="text-3xl font-bold">Welcome back</h1>
-          <p className="text-gray-500 mt-2">Sign in to Optimal Source</p>
+          <h1 className="text-3xl font-bold text-[var(--foreground)]">Welcome back</h1>
+          <p className="text-[var(--text-tertiary)] mt-2">Sign in to TrueRank</p>
         </div>
 
-        <div className="bg-gray-950 border border-gray-800 rounded-2xl p-6 space-y-3">
+        <div className="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 space-y-3">
           <button
             onClick={handleGoogleSignIn}
             disabled={isLoading}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-100 disabled:opacity-50 transition-colors"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-semibold hover:opacity-90 disabled:opacity-50 transition-opacity"
           >
             <GoogleIcon />
             Continue with Google
@@ -76,23 +74,23 @@ export default function LoginPage() {
 
           <button
             disabled
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-black border border-gray-700 text-gray-500 rounded-full font-semibold cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-[var(--background)] border border-[var(--border)] text-[var(--text-tertiary)] rounded-full font-semibold cursor-not-allowed"
           >
             <AppleIcon />
             Continue with Apple
-            <span className="text-xs text-gray-600">(soon)</span>
+            <span className="text-xs text-[var(--text-tertiary)]">(soon)</span>
           </button>
 
           <div className="flex items-center gap-3 py-2">
-            <div className="flex-1 h-px bg-gray-800" />
-            <span className="text-xs text-gray-600">OR</span>
-            <div className="flex-1 h-px bg-gray-800" />
+            <div className="flex-1 h-px bg-[var(--border)]" />
+            <span className="text-xs text-[var(--text-tertiary)]">OR</span>
+            <div className="flex-1 h-px bg-[var(--border)]" />
           </div>
 
           {!showEmailForm ? (
             <button
               onClick={() => setShowEmailForm(true)}
-              className="w-full text-center py-3 text-gray-300 hover:text-white transition-colors"
+              className="w-full text-center py-3 text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
             >
               Continue with email
             </button>
@@ -104,12 +102,12 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-full text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+                className="w-full px-4 py-3 bg-[var(--background)] border border-[var(--border)] rounded-full text-[var(--foreground)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-[var(--border-strong)]"
               />
               <button
                 type="submit"
                 disabled={isLoading || !email}
-                className="w-full px-4 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-100 disabled:opacity-50 transition-colors"
+                className="w-full px-4 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-semibold hover:opacity-90 disabled:opacity-50 transition-opacity"
               >
                 {isLoading ? 'Sending...' : 'Send magic link'}
               </button>
@@ -120,8 +118,8 @@ export default function LoginPage() {
             <div
               className={`mt-3 p-3 rounded-lg text-sm ${
                 message.type === 'error'
-                  ? 'bg-red-950 border border-red-900 text-red-400'
-                  : 'bg-green-950 border border-green-900 text-green-400'
+                  ? 'bg-[var(--bad-bg)] border border-[var(--bad)] text-[var(--bad)]'
+                  : 'bg-[var(--good-bg)] border border-[var(--good)] text-[var(--good)]'
               }`}
             >
               {message.text}
@@ -129,7 +127,7 @@ export default function LoginPage() {
           ) : null}
         </div>
 
-        <p className="text-center text-xs text-gray-600 mt-6">
+        <p className="text-center text-xs text-[var(--text-tertiary)] mt-6">
           By continuing, you agree to our terms and privacy policy.
         </p>
       </div>

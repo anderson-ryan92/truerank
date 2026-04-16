@@ -80,7 +80,7 @@ export function SaveButton({ productId }: Props) {
       className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${
         isSaved
           ? 'bg-white text-black border-white'
-          : 'bg-transparent text-white border-gray-700 hover:border-white'
+          : 'bg-transparent text-[var(--foreground)] border-gray-700 hover:border-white'
       } disabled:opacity-50`}
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill={isSaved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">

@@ -51,17 +51,17 @@ export default async function ProductPage({ params }: PageProps) {
   return (
     <main className="min-h-screen px-8 py-12 max-w-5xl mx-auto">
       <nav className="mb-8 text-sm text-gray-500">
-        <Link href="/" className="hover:text-gray-300">Home</Link>
+        <Link href="/" className="hover:text-[var(--foreground)]">Home</Link>
         {cat ? (
           <>
             <span className="mx-2">/</span>
-            <Link href={`/categories/${cat.slug}`} className="hover:text-gray-300">
+            <Link href={`/categories/${cat.slug}`} className="hover:text-[var(--foreground)]">
               {cat.name}
             </Link>
           </>
         ) : null}
         <span className="mx-2">/</span>
-        <span className="text-gray-300">{p.name}</span>
+        <span className="text-[var(--foreground)]">{p.name}</span>
       </nav>
 
       {/* HERO: Image + Details + Overall Score */}
@@ -78,10 +78,10 @@ export default async function ProductPage({ params }: PageProps) {
         <div className="flex flex-col">
           <div className="flex-1">
             <h1 className="text-4xl font-bold mb-2 leading-tight">{p.name}</h1>
-            {p.brand ? <p className="text-lg text-gray-400 mb-3">{p.brand}</p> : null}
+            {p.brand ? <p className="text-lg text-[var(--text-secondary)] mb-3">{p.brand}</p> : null}
 
             {details.subcategory ? (
-              <div className="inline-block px-3 py-1 mb-4 text-xs border border-gray-700 rounded-full text-gray-300">
+              <div className="inline-block px-3 py-1 mb-4 text-xs border border-gray-700 rounded-full text-[var(--foreground)]">
                 {details.subcategory}
               </div>
             ) : null}
@@ -173,9 +173,9 @@ export default async function ProductPage({ params }: PageProps) {
               >
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="font-semibold">{c.name}</h3>
-                  <span className="text-sm text-gray-400">{c.amount}</span>
+                  <span className="text-sm text-[var(--text-secondary)]">{c.amount}</span>
                 </div>
-                {c.description ? <p className="text-sm text-gray-400">{c.description}</p> : null}
+                {c.description ? <p className="text-sm text-[var(--text-secondary)]">{c.description}</p> : null}
               </div>
             ))}
           </div>
@@ -191,9 +191,9 @@ export default async function ProductPage({ params }: PageProps) {
               <div key={i} className="p-5 border border-gray-800 rounded-lg">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="font-semibold">{m.name}</h3>
-                  <span className="text-sm text-gray-400">{m.amount}</span>
+                  <span className="text-sm text-[var(--text-secondary)]">{m.amount}</span>
                 </div>
-                {m.description ? <p className="text-sm text-gray-400">{m.description}</p> : null}
+                {m.description ? <p className="text-sm text-[var(--text-secondary)]">{m.description}</p> : null}
               </div>
             ))}
           </div>
@@ -234,7 +234,7 @@ export default async function ProductPage({ params }: PageProps) {
                     ) : null}
                   </div>
                   <div className="text-right">
-                    <span className="text-sm text-gray-400">
+                    <span className="text-sm text-[var(--text-secondary)]">
                       {new Date(report.test_date).toLocaleDateString()}
                     </span>
                     {report.is_independent ? (
@@ -320,7 +320,7 @@ function SummaryRow({
   const dotColor = status === 'good' ? 'bg-green-500' : status === 'bad' ? 'bg-red-500' : 'bg-gray-600'
   return (
     <div className="flex items-center justify-between py-2 border-b border-gray-900 last:border-b-0">
-      <span className="text-sm text-gray-400">{label}</span>
+      <span className="text-sm text-[var(--text-secondary)]">{label}</span>
       <div className="flex items-center gap-2">
         <span className="text-sm">{value}</span>
         <div className={`w-2 h-2 rounded-full ${dotColor}`} />

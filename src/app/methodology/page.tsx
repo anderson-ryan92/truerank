@@ -3,19 +3,19 @@ export default function MethodologyPage() {
     <main className="min-h-screen px-8 py-16 max-w-3xl mx-auto">
       <header className="mb-12">
         <h1 className="text-5xl font-bold mb-4">Methodology</h1>
-        <p className="text-xl text-gray-400">
+        <p className="text-xl text-[var(--text-secondary)]">
           How we score products. No algorithms hiding behind marketing.
         </p>
       </header>
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">The Core Principle</h2>
-        <p className="text-gray-300 leading-relaxed mb-4">
+        <p className="text-[var(--foreground)] leading-relaxed mb-4">
           We buy products at retail. We send them to certified labs. We film the entire process.
           We publish the results. No brand-submitted reports. No aggregated public data passed off
           as independent testing. No paywall on the findings.
         </p>
-        <p className="text-gray-300 leading-relaxed">
+        <p className="text-[var(--foreground)] leading-relaxed">
           If a product on this site has a score, it means we bought it, tested it, and can prove
           every step of the chain of custody.
         </p>
@@ -23,7 +23,7 @@ export default function MethodologyPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Scoring Axes</h2>
-        <p className="text-gray-300 leading-relaxed mb-6">
+        <p className="text-[var(--foreground)] leading-relaxed mb-6">
           Every product is scored on four independent axes out of 100. We do not combine these
           into a single number because doing so hides the methodology. Each axis tells you
           something different, and you decide which matters most for your situation.
@@ -51,23 +51,23 @@ export default function MethodologyPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">What We Do Not Do</h2>
-        <ul className="space-y-3 text-gray-300 leading-relaxed">
+        <ul className="space-y-3 text-[var(--foreground)] leading-relaxed">
           <li>
-            <span className="font-semibold text-white">We do not aggregate public databases.</span>{' '}
+            <span className="font-semibold text-[var(--foreground)]">We do not aggregate public databases.</span>{' '}
             We do not pull EPA, FDA, or EWG data and repackage it as our testing. If a product has
             not been tested by us, it is labeled clearly as untested.
           </li>
           <li>
-            <span className="font-semibold text-white">We do not take brand-submitted reports.</span>{' '}
+            <span className="font-semibold text-[var(--foreground)]">We do not take brand-submitted reports.</span>{' '}
             Brands cannot pay us to test their products. Brands cannot submit their own lab reports
             for us to display. Everything comes from our own testing.
           </li>
           <li>
-            <span className="font-semibold text-white">We do not lock scores behind a paywall.</span>{' '}
+            <span className="font-semibold text-[var(--foreground)]">We do not lock scores behind a paywall.</span>{' '}
             Every score, every lab report, every piece of data is free. The content is the trust.
           </li>
           <li>
-            <span className="font-semibold text-white">We do not average scores into a single number.</span>{' '}
+            <span className="font-semibold text-[var(--foreground)]">We do not average scores into a single number.</span>{' '}
             A single score pretends the methodology is more objective than it is. Multi-axis scoring
             respects your ability to weigh the tradeoffs yourself.
           </li>
@@ -76,7 +76,7 @@ export default function MethodologyPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Chain of Custody</h2>
-        <p className="text-gray-300 leading-relaxed">
+        <p className="text-[var(--foreground)] leading-relaxed">
           Every lab report on this site links to documentation of the chain of custody:
           where the product was purchased, when it was purchased, how it was transported,
           when it arrived at the lab, and who handled it. Most testing platforms cannot
@@ -86,7 +86,7 @@ export default function MethodologyPage() {
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">Methodology Version</h2>
-        <p className="text-gray-300 leading-relaxed">
+        <p className="text-[var(--foreground)] leading-relaxed">
           Current version: v1.0. When we change scoring rules, we publish the new version,
           archive the old one, and rescore affected products. Every score on this site is
           tagged with the methodology version it was calculated under.
@@ -100,7 +100,7 @@ function ScoreAxis({ name, description }: { name: string; description: string })
   return (
     <div className="p-6 border border-gray-800 rounded-lg">
       <h3 className="text-lg font-semibold mb-2">{name}</h3>
-      <p className="text-gray-400 leading-relaxed">{description}</p>
+      <p className="text-[var(--text-secondary)] leading-relaxed">{description}</p>
     </div>
   )
 }

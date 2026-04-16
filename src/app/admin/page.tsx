@@ -44,7 +44,7 @@ export default async function AdminPage() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Actions</h2>
+        <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide mb-4">Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Link
             href="/admin/products/new"
@@ -73,7 +73,7 @@ export default async function AdminPage() {
 
       <section>
         <div className="flex items-baseline justify-between mb-4">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
+          <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">
             Untested products
           </h2>
           <span className="text-xs text-gray-600">
@@ -101,25 +101,25 @@ export default async function AdminPage() {
                 <div className="flex items-center gap-3 text-sm">
                   <Link
                     href={`/admin/products/${product.slug}/details`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
                   >
                     Edit details
                   </Link>
                   <Link
                     href={`/admin/products/${product.slug}/lab-report`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
                   >
                     + Lab report
                   </Link>
                   <Link
                     href={`/admin/products/${product.slug}/score`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
                   >
                     + Score
                   </Link>
                   <Link
                     href={`/products/${product.slug}`}
-                    className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
+                    className="text-xs text-gray-600 hover:text-[var(--text-secondary)] transition-colors"
                   >
                     View →
                   </Link>

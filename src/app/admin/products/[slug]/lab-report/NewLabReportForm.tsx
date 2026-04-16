@@ -83,7 +83,7 @@ export function NewLabReportForm({ productId, productSlug }: Props) {
       />
 
       <div>
-        <label className="block text-sm font-medium text-gray-400 mb-2">
+        <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
           Test date <span className="text-red-500">*</span>
         </label>
         <input
@@ -91,7 +91,7 @@ export function NewLabReportForm({ productId, productSlug }: Props) {
           required
           value={testDate}
           onChange={(e) => setTestDate(e.target.value)}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
         />
       </div>
 
@@ -115,13 +115,13 @@ export function NewLabReportForm({ productId, productSlug }: Props) {
       />
 
       <div>
-        <label className="block text-sm font-medium text-gray-400 mb-2">Methodology notes</label>
+        <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Methodology notes</label>
         <textarea
           value={methodology}
           onChange={(e) => setMethodology(e.target.value)}
           placeholder="ICP-MS heavy metals panel, EPA 537.1 PFAS, microplastics count..."
           rows={3}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
         />
       </div>
 
@@ -133,7 +133,7 @@ export function NewLabReportForm({ productId, productSlug }: Props) {
             onChange={(e) => setIsIndependent(e.target.checked)}
             className="w-4 h-4"
           />
-          <span className="text-sm text-gray-300">Independently commissioned by Optimal Source</span>
+          <span className="text-sm text-[var(--foreground)]">Independently commissioned by TrueRank</span>
         </label>
         <label className="flex items-center gap-3 cursor-pointer">
           <input
@@ -142,7 +142,7 @@ export function NewLabReportForm({ productId, productSlug }: Props) {
             onChange={(e) => setMarkAsTested(e.target.checked)}
             className="w-4 h-4"
           />
-          <span className="text-sm text-gray-300">Mark product as tested</span>
+          <span className="text-sm text-[var(--foreground)]">Mark product as tested</span>
         </label>
       </div>
 
@@ -166,7 +166,7 @@ export function NewLabReportForm({ productId, productSlug }: Props) {
         >
           {isLoading ? 'Saving...' : 'Save lab report'}
         </button>
-        <Link href="/admin" className="px-6 py-3 text-gray-400 hover:text-white transition-colors">
+        <Link href="/admin" className="px-6 py-3 text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">
           Cancel
         </Link>
       </div>
@@ -189,7 +189,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-2">
+      <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
         {label} {required ? <span className="text-red-500">*</span> : null}
       </label>
       <input
@@ -198,7 +198,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
       />
     </div>
   )

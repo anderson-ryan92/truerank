@@ -86,14 +86,14 @@ export function NewProductForm({ categories }: Props) {
       />
 
       <div>
-        <label className="block text-sm font-medium text-gray-400 mb-2">
+        <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
           Category <span className="text-red-500">*</span>
         </label>
         <select
           required
           value={categoryId}
           onChange={(e) => setCategoryId(e.target.value)}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
         >
           {categories.map((cat) => (
             <option key={cat.id} value={cat.id}>
@@ -146,7 +146,7 @@ export function NewProductForm({ categories }: Props) {
         </button>
         <Link
           href="/admin"
-          className="px-6 py-3 text-gray-400 hover:text-white transition-colors"
+          className="px-6 py-3 text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
         >
           Cancel
         </Link>
@@ -174,7 +174,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-2">
+      <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
         {label} {required ? <span className="text-red-500">*</span> : null}
       </label>
       <input
@@ -184,7 +184,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
       />
     </div>
   )

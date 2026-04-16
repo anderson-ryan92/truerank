@@ -61,7 +61,7 @@ export default async function HomePage() {
     <main className="min-h-screen px-8 py-20 max-w-5xl mx-auto">
       <header className="mb-16 text-center">
         <h1 className="font-serif text-6xl md:text-7xl font-medium mb-5 tracking-tight text-[var(--foreground)]">
-          Optimal Source
+          TrueRank
         </h1>
         <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-xl mx-auto">
           Independent lab testing. Full chain of custody. Real data.

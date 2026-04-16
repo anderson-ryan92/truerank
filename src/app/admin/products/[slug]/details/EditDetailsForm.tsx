@@ -83,7 +83,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
     <form onSubmit={handleSubmit} className="space-y-8">
       {/* SECTION 1: Summary */}
       <section className="space-y-4">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Summary</h2>
+        <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">Summary</h2>
         
         <Field
           label="Image URL"
@@ -145,13 +145,13 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
       {/* SECTION 2: Contaminants */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Contaminants</h2>
+          <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">Contaminants</h2>
           <button
             type="button"
             onClick={() =>
               setContaminants([...contaminants, { name: '', amount: '', severity: 'moderate', description: '' }])
             }
-            className="text-xs text-gray-400 hover:text-white"
+            className="text-xs text-[var(--text-secondary)] hover:text-[var(--foreground)]"
           >
             + Add contaminant
           </button>
@@ -172,7 +172,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setContaminants(next)
                 }}
                 placeholder="Bromide"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
               />
               <input
                 value={c.amount}
@@ -182,7 +182,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setContaminants(next)
                 }}
                 placeholder="0.036 mg/L"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
               />
             </div>
             <select
@@ -192,7 +192,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 next[i] = { ...next[i], severity: e.target.value as ProductContaminant['severity'] }
                 setContaminants(next)
               }}
-              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white text-sm"
+              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] text-sm"
             >
               <option value="low">Low concern</option>
               <option value="moderate">Moderate concern</option>
@@ -207,7 +207,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
               }}
               placeholder="Why this matters..."
               rows={2}
-              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
             />
             <button
               type="button"
@@ -223,11 +223,11 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
       {/* SECTION 3: Minerals / beneficial ingredients */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Minerals & beneficial ingredients</h2>
+          <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">Minerals & beneficial ingredients</h2>
           <button
             type="button"
             onClick={() => setMinerals([...minerals, { name: '', amount: '', description: '' }])}
-            className="text-xs text-gray-400 hover:text-white"
+            className="text-xs text-[var(--text-secondary)] hover:text-[var(--foreground)]"
           >
             + Add mineral
           </button>
@@ -244,7 +244,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setMinerals(next)
                 }}
                 placeholder="Calcium"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
               />
               <input
                 value={m.amount}
@@ -254,7 +254,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setMinerals(next)
                 }}
                 placeholder="5.4 mg/L"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
               />
             </div>
             <textarea
@@ -266,7 +266,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
               }}
               placeholder="What this does in the body..."
               rows={2}
-              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
             />
             <button
               type="button"
@@ -282,11 +282,11 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
       {/* SECTION 4: Product details */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Product details</h2>
+          <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">Product details</h2>
           <button
             type="button"
             onClick={() => setDetails([...details, { label: '', value: '' }])}
-            className="text-xs text-gray-400 hover:text-white"
+            className="text-xs text-[var(--text-secondary)] hover:text-[var(--foreground)]"
           >
             + Add detail
           </button>
@@ -302,7 +302,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setDetails(next)
               }}
               placeholder="Packaging"
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
             />
             <input
               value={d.value}
@@ -312,7 +312,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setDetails(next)
               }}
               placeholder="Glass"
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
             />
             <button
               type="button"
@@ -328,11 +328,11 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
       {/* SECTION 5: Sources */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Sources</h2>
+          <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">Sources</h2>
           <button
             type="button"
             onClick={() => setSources([...sources, { label: '', url: '' }])}
-            className="text-xs text-gray-400 hover:text-white"
+            className="text-xs text-[var(--text-secondary)] hover:text-[var(--foreground)]"
           >
             + Add source
           </button>
@@ -348,7 +348,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setSources(next)
               }}
               placeholder="Water Quality Report 2024"
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
             />
             <input
               value={s.url}
@@ -358,7 +358,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setSources(next)
               }}
               placeholder="https://..."
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-white placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
             />
             <button
               type="button"
@@ -390,7 +390,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
         >
           {isLoading ? 'Saving...' : 'Save details'}
         </button>
-        <Link href="/admin" className="px-6 py-3 text-gray-400 hover:text-white transition-colors">
+        <Link href="/admin" className="px-6 py-3 text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">
           Cancel
         </Link>
       </div>
@@ -415,13 +415,13 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-2">{label}</label>
+      <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{label}</label>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
       />
       {hint ? <p className="text-xs text-gray-600 mt-1">{hint}</p> : null}
     </div>
@@ -441,11 +441,11 @@ function SelectField({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-2">{label}</label>
+      <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{label}</label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>

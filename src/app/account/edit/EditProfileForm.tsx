@@ -51,7 +51,7 @@ export function EditProfileForm({ initialDisplayName, initialZipCode }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="displayName" className="block text-sm font-medium text-gray-400 mb-2">
+        <label htmlFor="displayName" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
           Display name
         </label>
         <input
@@ -61,12 +61,12 @@ export function EditProfileForm({ initialDisplayName, initialZipCode }: Props) {
           onChange={(e) => setDisplayName(e.target.value)}
           placeholder="How you want to appear on the site"
           maxLength={80}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
         />
       </div>
 
       <div>
-        <label htmlFor="zipCode" className="block text-sm font-medium text-gray-400 mb-2">
+        <label htmlFor="zipCode" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
           Zip code
         </label>
         <input
@@ -76,7 +76,7 @@ export function EditProfileForm({ initialDisplayName, initialZipCode }: Props) {
           onChange={(e) => setZipCode(e.target.value)}
           placeholder="78701"
           maxLength={10}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
         />
         <p className="text-xs text-gray-600 mt-2">
           Used for local tap water quality and store recommendations. Not shared publicly.
@@ -105,7 +105,7 @@ export function EditProfileForm({ initialDisplayName, initialZipCode }: Props) {
         </button>
         <Link
           href="/account"
-          className="px-6 py-3 text-gray-400 hover:text-white transition-colors"
+          className="px-6 py-3 text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
         >
           Cancel
         </Link>

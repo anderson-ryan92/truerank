@@ -18,7 +18,7 @@ export default async function LabReportsPage() {
     <main className="min-h-screen px-8 py-16 max-w-4xl mx-auto">
       <header className="mb-12">
         <h1 className="text-5xl font-bold mb-4">Lab Reports</h1>
-        <p className="text-xl text-gray-400">
+        <p className="text-xl text-[var(--text-secondary)]">
           Every test we have commissioned. Full documentation, downloadable reports.
         </p>
       </header>
@@ -40,7 +40,7 @@ export default async function LabReportsPage() {
 
       {reports.length === 0 ? (
         <div className="p-12 border border-dashed border-gray-700 rounded-lg text-center">
-          <p className="text-gray-400 mb-2 text-lg">No lab reports published yet.</p>
+          <p className="text-[var(--text-secondary)] mb-2 text-lg">No lab reports published yet.</p>
           <p className="text-sm text-gray-500">First round of testing in progress. Results coming soon.</p>
         </div>
       ) : (
@@ -69,7 +69,7 @@ function ReportCard({ report }: { report: LabReportWithProduct }) {
           ) : null}
         </div>
         <div className="text-right">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-[var(--text-secondary)]">
             {new Date(report.test_date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'short',
@@ -85,7 +85,7 @@ function ReportCard({ report }: { report: LabReportWithProduct }) {
       </div>
 
       <div className="mb-3">
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-[var(--text-secondary)]">
           <span className="text-gray-500">Lab:</span> {report.lab_name}
           {report.lab_location ? <span className="text-gray-600"> · {report.lab_location}</span> : null}
         </p>

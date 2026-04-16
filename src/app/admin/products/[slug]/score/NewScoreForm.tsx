@@ -106,18 +106,18 @@ export function NewScoreForm({ productId, productSlug, existing }: Props) {
       />
 
       <div>
-        <label className="block text-sm font-medium text-gray-400 mb-2">Notes</label>
+        <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Notes</label>
         <textarea
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Why these scores? What was tested, what wasn't, any caveats..."
           rows={4}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
         />
       </div>
 
       <div className="p-4 border border-gray-800 rounded-lg text-sm text-gray-500">
-        Methodology version: <span className="text-gray-300">{METHODOLOGY_VERSION}</span>
+        Methodology version: <span className="text-[var(--foreground)]">{METHODOLOGY_VERSION}</span>
       </div>
 
       {message ? (
@@ -140,7 +140,7 @@ export function NewScoreForm({ productId, productSlug, existing }: Props) {
         >
           {isLoading ? 'Saving...' : 'Save scores'}
         </button>
-        <Link href="/admin" className="px-6 py-3 text-gray-400 hover:text-white transition-colors">
+        <Link href="/admin" className="px-6 py-3 text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors">
           Cancel
         </Link>
       </div>
@@ -161,7 +161,7 @@ function ScoreField({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-1">
+      <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1">
         {label} <span className="text-xs text-gray-600">(0-100)</span>
       </label>
       <input
@@ -171,7 +171,7 @@ function ScoreField({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Leave blank if not applicable"
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
       />
       <p className="text-xs text-gray-600 mt-1">{hint}</p>
     </div>

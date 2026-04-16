@@ -29,7 +29,7 @@ export default async function NewLabReportPage({ params }: PageProps) {
   return (
     <main className="min-h-screen px-8 py-16 max-w-xl mx-auto">
       <nav className="mb-8 text-sm">
-        <Link href="/admin" className="text-gray-500 hover:text-gray-300">
+        <Link href="/admin" className="text-gray-500 hover:text-[var(--foreground)]">
           ← Back to admin
         </Link>
       </nav>
