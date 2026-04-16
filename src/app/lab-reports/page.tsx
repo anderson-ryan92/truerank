@@ -23,7 +23,7 @@ export default async function LabReportsPage() {
         </p>
       </header>
 
-      <section className="mb-8 p-6 border border-gray-800 rounded-lg bg-gray-950">
+      <section className="mb-8 p-6 border border-[var(--border)] rounded-lg bg-[var(--surface)]">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <Stat label="Total reports" value={reports.length} />
           <Stat label="Independent tests" value={reports.filter((r) => r.is_independent).length} />
@@ -33,15 +33,15 @@ export default async function LabReportsPage() {
       </section>
 
       {error ? (
-        <div className="mb-6 p-4 border border-red-900 bg-red-950 rounded-lg">
-          <p className="text-sm text-red-400">Error loading reports: {error.message}</p>
+        <div className="mb-6 p-4 border border-[var(--bad)] bg-[var(--bad-bg)] rounded-lg">
+          <p className="text-sm text-[var(--bad)]">Error loading reports: {error.message}</p>
         </div>
       ) : null}
 
       {reports.length === 0 ? (
-        <div className="p-12 border border-dashed border-gray-700 rounded-lg text-center">
+        <div className="p-12 border border-dashed border-[var(--border-strong)] rounded-lg text-center">
           <p className="text-[var(--text-secondary)] mb-2 text-lg">No lab reports published yet.</p>
-          <p className="text-sm text-gray-500">First round of testing in progress. Results coming soon.</p>
+          <p className="text-sm text-[var(--text-tertiary)]">First round of testing in progress. Results coming soon.</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -56,7 +56,7 @@ export default async function LabReportsPage() {
 
 function ReportCard({ report }: { report: LabReportWithProduct }) {
   return (
-    <div className="p-6 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors">
+    <div className="p-6 border border-[var(--border)] rounded-lg hover:border-gray-600 transition-colors">
       <div className="flex justify-between items-start mb-3">
         <div>
           {report.products ? (
@@ -65,7 +65,7 @@ function ReportCard({ report }: { report: LabReportWithProduct }) {
             </Link>
           ) : null}
           {report.products?.brand ? (
-            <p className="text-sm text-gray-500">{report.products.brand}</p>
+            <p className="text-sm text-[var(--text-tertiary)]">{report.products.brand}</p>
           ) : null}
         </div>
         <div className="text-right">
@@ -77,7 +77,7 @@ function ReportCard({ report }: { report: LabReportWithProduct }) {
             })}
           </p>
           {report.is_independent ? (
-            <span className="inline-block mt-1 text-xs px-2 py-0.5 border border-green-800 text-green-400 rounded">
+            <span className="inline-block mt-1 text-xs px-2 py-0.5 border border-[var(--good)] text-[var(--good)] rounded">
               Independent
             </span>
           ) : null}
@@ -86,8 +86,8 @@ function ReportCard({ report }: { report: LabReportWithProduct }) {
 
       <div className="mb-3">
         <p className="text-sm text-[var(--text-secondary)]">
-          <span className="text-gray-500">Lab:</span> {report.lab_name}
-          {report.lab_location ? <span className="text-gray-600"> · {report.lab_location}</span> : null}
+          <span className="text-[var(--text-tertiary)]">Lab:</span> {report.lab_name}
+          {report.lab_location ? <span className="text-[var(--text-tertiary)]"> · {report.lab_location}</span> : null}
         </p>
       </div>
 
@@ -116,7 +116,7 @@ function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div>
       <p className="text-3xl font-bold">{value}</p>
-      <p className="text-xs text-gray-500 mt-1">{label}</p>
+      <p className="text-xs text-[var(--text-tertiary)] mt-1">{label}</p>
     </div>
   )
 }

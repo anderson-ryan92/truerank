@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="border-t border-gray-800 mt-24">
+    <footer className="border-t border-[var(--border)] mt-24">
       <div className="max-w-5xl mx-auto px-8 py-12 text-sm text-gray-500">
         <div className="flex justify-between items-center">
           <p>© {new Date().getFullYear()} TrueRank. Independent lab testing.</p>

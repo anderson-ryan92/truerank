@@ -66,10 +66,10 @@ export default async function ProductPage({ params }: PageProps) {
 
       {/* HERO: Image + Details + Overall Score */}
       <section className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-8 mb-12">
-        <div className="aspect-square bg-[var(--background)] border border-[var(--border)] rounded-xl flex items-center justify-center overflow-hidden">
+        <div className="bg-[var(--background)] border border-[var(--border)] rounded-xl overflow-hidden aspect-[3/4]">
           {p.image_url ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={p.image_url} alt={p.name} className="w-full h-full object-contain p-8" />
+            <img src={p.image_url} alt={p.name} className="w-full h-full object-cover" />
           ) : (
             <div className="text-gray-700 text-sm">No image</div>
           )}
@@ -91,7 +91,7 @@ export default async function ProductPage({ params }: PageProps) {
               {score?.overall_score !== null && score?.overall_score !== undefined ? (
                 <ScoreCircle value={score.overall_score} />
               ) : (
-                <div className="flex items-center gap-2 px-4 py-2 border border-gray-800 rounded-lg text-sm text-gray-500">
+                <div className="flex items-center gap-2 px-4 py-2 border border-[var(--border)] rounded-lg text-sm text-gray-500">
                   Not yet scored
                 </div>
               )}
@@ -168,7 +168,7 @@ export default async function ProductPage({ params }: PageProps) {
                     ? 'border-red-900 bg-red-950/30'
                     : c.severity === 'moderate'
                     ? 'border-yellow-900 bg-yellow-950/20'
-                    : 'border-gray-800'
+                    : 'border-[var(--border)]'
                 }`}
               >
                 <div className="flex justify-between items-start mb-2">
@@ -188,7 +188,7 @@ export default async function ProductPage({ params }: PageProps) {
           <h2 className="text-2xl font-semibold mb-6">Ingredients & Minerals</h2>
           <div className="space-y-3">
             {details.minerals.map((m, i) => (
-              <div key={i} className="p-5 border border-gray-800 rounded-lg">
+              <div key={i} className="p-5 border border-[var(--border)] rounded-lg">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="font-semibold">{m.name}</h3>
                   <span className="text-sm text-[var(--text-secondary)]">{m.amount}</span>
@@ -206,7 +206,7 @@ export default async function ProductPage({ params }: PageProps) {
           <h2 className="text-2xl font-semibold mb-6">Product Details</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {details.details.map((d, i) => (
-              <div key={i} className="p-5 border border-gray-800 rounded-lg">
+              <div key={i} className="p-5 border border-[var(--border)] rounded-lg">
                 <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">{d.label}</p>
                 <p className="text-lg font-semibold">{d.value}</p>
               </div>
@@ -225,7 +225,7 @@ export default async function ProductPage({ params }: PageProps) {
         ) : (
           <div className="space-y-4">
             {reports.map((report) => (
-              <div key={report.id} className="p-6 border border-gray-800 rounded-lg">
+              <div key={report.id} className="p-6 border border-[var(--border)] rounded-lg">
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <h3 className="font-semibold">{report.lab_name}</h3>
@@ -298,7 +298,7 @@ function ScoreCircle({ value }: { value: number }) {
 
 function ScoreCard({ label, value }: { label: string; value: number | null }) {
   return (
-    <div className="p-4 border border-gray-800 rounded-lg">
+    <div className="p-4 border border-[var(--border)] rounded-lg">
       <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">{label}</p>
       <p className="text-3xl font-bold">
         {value !== null ? value : '—'}

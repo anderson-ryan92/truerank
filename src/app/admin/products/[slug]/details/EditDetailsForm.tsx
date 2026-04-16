@@ -162,7 +162,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
         ) : null}
 
         {contaminants.map((c, i) => (
-          <div key={i} className="p-4 border border-gray-800 rounded-lg space-y-3">
+          <div key={i} className="p-4 border border-[var(--border)] rounded-lg space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <input
                 value={c.name}
@@ -172,7 +172,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setContaminants(next)
                 }}
                 placeholder="Bromide"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
               />
               <input
                 value={c.amount}
@@ -182,7 +182,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setContaminants(next)
                 }}
                 placeholder="0.036 mg/L"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
               />
             </div>
             <select
@@ -192,7 +192,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 next[i] = { ...next[i], severity: e.target.value as ProductContaminant['severity'] }
                 setContaminants(next)
               }}
-              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] text-sm"
+              className="w-full px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] text-sm"
             >
               <option value="low">Low concern</option>
               <option value="moderate">Moderate concern</option>
@@ -207,7 +207,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
               }}
               placeholder="Why this matters..."
               rows={2}
-              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+              className="w-full px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
             />
             <button
               type="button"
@@ -234,7 +234,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
         </div>
 
         {minerals.map((m, i) => (
-          <div key={i} className="p-4 border border-gray-800 rounded-lg space-y-3">
+          <div key={i} className="p-4 border border-[var(--border)] rounded-lg space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <input
                 value={m.name}
@@ -244,7 +244,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setMinerals(next)
                 }}
                 placeholder="Calcium"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
               />
               <input
                 value={m.amount}
@@ -254,7 +254,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                   setMinerals(next)
                 }}
                 placeholder="5.4 mg/L"
-                className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+                className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
               />
             </div>
             <textarea
@@ -266,7 +266,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
               }}
               placeholder="What this does in the body..."
               rows={2}
-              className="w-full px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+              className="w-full px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
             />
             <button
               type="button"
@@ -302,7 +302,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setDetails(next)
               }}
               placeholder="Packaging"
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
             />
             <input
               value={d.value}
@@ -312,7 +312,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setDetails(next)
               }}
               placeholder="Glass"
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
             />
             <button
               type="button"
@@ -348,7 +348,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setSources(next)
               }}
               placeholder="Water Quality Report 2024"
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
             />
             <input
               value={s.url}
@@ -358,7 +358,7 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
                 setSources(next)
               }}
               placeholder="https://..."
-              className="px-3 py-2 bg-gray-900 border border-gray-800 rounded text-[var(--foreground)] placeholder-gray-600 text-sm"
+              className="px-3 py-2 bg-[var(--surface)] border border-[var(--border)] rounded text-[var(--foreground)] placeholder-[var(--text-tertiary)] text-sm"
             />
             <button
               type="button"
@@ -382,11 +382,11 @@ export function EditDetailsForm({ productId, productSlug, existing, existingImag
         </div>
       ) : null}
 
-      <div className="flex gap-3 pt-4 border-t border-gray-800">
+      <div className="flex gap-3 pt-4 border-t border-[var(--border)]">
         <button
           type="submit"
           disabled={isLoading}
-          className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 disabled:opacity-50 transition-colors"
+          className="px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-semibold hover:opacity-90 disabled:opacity-50 transition-colors"
         >
           {isLoading ? 'Saving...' : 'Save details'}
         </button>
@@ -421,7 +421,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-gray-600"
       />
       {hint ? <p className="text-xs text-gray-600 mt-1">{hint}</p> : null}
     </div>
@@ -445,7 +445,7 @@ function SelectField({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>

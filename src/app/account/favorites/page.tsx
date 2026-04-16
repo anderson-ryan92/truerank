@@ -28,27 +28,27 @@ export default async function FavoritesPage() {
   return (
     <main className="min-h-screen px-8 py-16 max-w-3xl mx-auto">
       <nav className="mb-8 text-sm">
-        <Link href="/account" className="text-gray-500 hover:text-[var(--foreground)]">
+        <Link href="/account" className="text-[var(--text-tertiary)] hover:text-[var(--foreground)]">
           ← Back to account
         </Link>
       </nav>
 
       <header className="mb-12">
         <h1 className="text-4xl font-bold mb-2">Saved products</h1>
-        <p className="text-gray-500">
+        <p className="text-[var(--text-tertiary)]">
           {favoriteList.length} {favoriteList.length === 1 ? 'product' : 'products'} saved
         </p>
       </header>
 
       {favoriteList.length === 0 ? (
-        <div className="p-12 border border-dashed border-gray-700 rounded-lg text-center">
+        <div className="p-12 border border-dashed border-[var(--border-strong)] rounded-lg text-center">
           <p className="text-[var(--text-secondary)] mb-2">No saved products yet.</p>
-          <p className="text-sm text-gray-500 mb-6">
+          <p className="text-sm text-[var(--text-tertiary)] mb-6">
             Save products from their detail pages to see them here.
           </p>
           <Link
             href="/"
-            className="inline-block px-4 py-2 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition-colors"
+            className="inline-block px-4 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-semibold hover:opacity-90 transition-colors"
           >
             Browse categories
           </Link>
@@ -61,16 +61,16 @@ export default async function FavoritesPage() {
               <Link
                 key={fav.id}
                 href={`/products/${fav.products.slug}`}
-                className="block p-6 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors"
+                className="block p-6 border border-[var(--border)] rounded-lg hover:border-gray-600 transition-colors"
               >
                 <div className="flex justify-between items-start">
                   <div>
                     <h3 className="text-lg font-semibold">{fav.products.name}</h3>
                     {fav.products.brand ? (
-                      <p className="text-sm text-gray-500 mt-1">{fav.products.brand}</p>
+                      <p className="text-sm text-[var(--text-tertiary)] mt-1">{fav.products.brand}</p>
                     ) : null}
                   </div>
-                  <span className="text-xs text-gray-600">
+                  <span className="text-xs text-[var(--text-tertiary)]">
                     Saved {new Date(fav.created_at).toLocaleDateString()}
                   </span>
                 </div>

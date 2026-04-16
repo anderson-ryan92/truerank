@@ -31,9 +31,9 @@ export default async function AdminPage() {
   return (
     <main className="min-h-screen px-8 py-16 max-w-5xl mx-auto">
       <header className="mb-12">
-        <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Admin</p>
+        <p className="text-xs text-[var(--text-tertiary)] uppercase tracking-wide mb-2">Admin</p>
         <h1 className="text-4xl font-bold mb-2">Control Panel</h1>
-        <p className="text-gray-500">Manage products, lab reports, and scores.</p>
+        <p className="text-[var(--text-tertiary)]">Manage products, lab reports, and scores.</p>
       </header>
 
       <section className="mb-12 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -48,25 +48,25 @@ export default async function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Link
             href="/admin/products/new"
-            className="block p-6 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors"
+            className="block p-6 border border-[var(--border)] rounded-lg hover:border-gray-600 transition-colors"
           >
             <h3 className="font-semibold mb-1">Add a product</h3>
-            <p className="text-sm text-gray-500">Create a new product entry</p>
+            <p className="text-sm text-[var(--text-tertiary)]">Create a new product entry</p>
           </Link>
-          <div className="block p-6 border border-gray-800 rounded-lg opacity-50">
+          <div className="block p-6 border border-[var(--border)] rounded-lg opacity-50">
             <h3 className="font-semibold mb-1">Add a lab report</h3>
-            <p className="text-sm text-gray-500">Select a product below</p>
+            <p className="text-sm text-[var(--text-tertiary)]">Select a product below</p>
           </div>
-          <div className="block p-6 border border-gray-800 rounded-lg opacity-50">
+          <div className="block p-6 border border-[var(--border)] rounded-lg opacity-50">
             <h3 className="font-semibold mb-1">Set scores</h3>
-            <p className="text-sm text-gray-500">Select a product below</p>
+            <p className="text-sm text-[var(--text-tertiary)]">Select a product below</p>
           </div>
           <Link
             href="/"
-            className="block p-6 border border-gray-800 rounded-lg hover:border-gray-600 transition-colors"
+            className="block p-6 border border-[var(--border)] rounded-lg hover:border-gray-600 transition-colors"
           >
             <h3 className="font-semibold mb-1">Back to site</h3>
-            <p className="text-sm text-gray-500">Return to public home page</p>
+            <p className="text-sm text-[var(--text-tertiary)]">Return to public home page</p>
           </Link>
         </div>
       </section>
@@ -76,13 +76,13 @@ export default async function AdminPage() {
           <h2 className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wide">
             Untested products
           </h2>
-          <span className="text-xs text-gray-600">
+          <span className="text-xs text-[var(--text-tertiary)]">
             Showing {products.length} of {untestedCount || 0}
           </span>
         </div>
 
         {products.length === 0 ? (
-          <div className="p-8 border border-dashed border-gray-700 rounded-lg text-center text-gray-500">
+          <div className="p-8 border border-dashed border-[var(--border-strong)] rounded-lg text-center text-[var(--text-tertiary)]">
             No untested products.
           </div>
         ) : (
@@ -90,12 +90,12 @@ export default async function AdminPage() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="p-4 border border-gray-800 rounded-lg flex items-center justify-between hover:border-gray-600 transition-colors"
+                className="p-4 border border-[var(--border)] rounded-lg flex items-center justify-between hover:border-gray-600 transition-colors"
               >
                 <div>
                   <p className="font-medium">{product.name}</p>
                   {product.brand ? (
-                    <p className="text-xs text-gray-500">{product.brand}</p>
+                    <p className="text-xs text-[var(--text-tertiary)]">{product.brand}</p>
                   ) : null}
                 </div>
                 <div className="flex items-center gap-3 text-sm">
@@ -119,7 +119,7 @@ export default async function AdminPage() {
                   </Link>
                   <Link
                     href={`/products/${product.slug}`}
-                    className="text-xs text-gray-600 hover:text-[var(--text-secondary)] transition-colors"
+                    className="text-xs text-[var(--text-tertiary)] hover:text-[var(--text-secondary)] transition-colors"
                   >
                     View →
                   </Link>
@@ -135,9 +135,9 @@ export default async function AdminPage() {
 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
-    <div className="p-4 border border-gray-800 rounded-lg">
+    <div className="p-4 border border-[var(--border)] rounded-lg">
       <p className="text-2xl font-bold">{value}</p>
-      <p className="text-xs text-gray-500 mt-1">{label}</p>
+      <p className="text-xs text-[var(--text-tertiary)] mt-1">{label}</p>
     </div>
   )
 }

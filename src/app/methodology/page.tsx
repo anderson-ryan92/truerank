@@ -98,7 +98,7 @@ export default function MethodologyPage() {
 
 function ScoreAxis({ name, description }: { name: string; description: string }) {
   return (
-    <div className="p-6 border border-gray-800 rounded-lg">
+    <div className="p-6 border border-[var(--border)] rounded-lg">
       <h3 className="text-lg font-semibold mb-2">{name}</h3>
       <p className="text-[var(--text-secondary)] leading-relaxed">{description}</p>
     </div>

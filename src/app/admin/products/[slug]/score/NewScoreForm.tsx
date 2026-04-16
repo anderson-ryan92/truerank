@@ -75,7 +75,7 @@ export function NewScoreForm({ productId, productSlug, existing }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {existing ? (
-        <div className="p-3 rounded-lg bg-yellow-950 border border-yellow-900 text-yellow-400 text-sm">
+        <div className="p-3 rounded-lg bg-[var(--warning-bg)] border border-[var(--warning)] text-[var(--warning)] text-sm">
           A score already exists. Submitting creates a new version; the old one is preserved.
         </div>
       ) : null}
@@ -112,11 +112,11 @@ export function NewScoreForm({ productId, productSlug, existing }: Props) {
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Why these scores? What was tested, what wasn't, any caveats..."
           rows={4}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-gray-600"
         />
       </div>
 
-      <div className="p-4 border border-gray-800 rounded-lg text-sm text-gray-500">
+      <div className="p-4 border border-[var(--border)] rounded-lg text-sm text-[var(--text-tertiary)]">
         Methodology version: <span className="text-[var(--foreground)]">{METHODOLOGY_VERSION}</span>
       </div>
 
@@ -124,8 +124,8 @@ export function NewScoreForm({ productId, productSlug, existing }: Props) {
         <div
           className={`p-3 rounded-lg text-sm ${
             message.type === 'error'
-              ? 'bg-red-950 border border-red-900 text-red-400'
-              : 'bg-green-950 border border-green-900 text-green-400'
+              ? 'bg-[var(--bad-bg)] border border-[var(--bad)] text-[var(--bad)]'
+              : 'bg-[var(--good-bg)] border border-[var(--good)] text-[var(--good)]'
           }`}
         >
           {message.text}
@@ -136,7 +136,7 @@ export function NewScoreForm({ productId, productSlug, existing }: Props) {
         <button
           type="submit"
           disabled={isLoading}
-          className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 disabled:opacity-50 transition-colors"
+          className="px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-semibold hover:opacity-90 disabled:opacity-50 transition-colors"
         >
           {isLoading ? 'Saving...' : 'Save scores'}
         </button>
@@ -162,7 +162,7 @@ function ScoreField({
   return (
     <div>
       <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1">
-        {label} <span className="text-xs text-gray-600">(0-100)</span>
+        {label} <span className="text-xs text-[var(--text-tertiary)]">(0-100)</span>
       </label>
       <input
         type="number"
@@ -171,9 +171,9 @@ function ScoreField({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Leave blank if not applicable"
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-gray-600"
       />
-      <p className="text-xs text-gray-600 mt-1">{hint}</p>
+      <p className="text-xs text-[var(--text-tertiary)] mt-1">{hint}</p>
     </div>
   )
 }

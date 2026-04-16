@@ -93,7 +93,7 @@ export function NewProductForm({ categories }: Props) {
           required
           value={categoryId}
           onChange={(e) => setCategoryId(e.target.value)}
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
+          className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] focus:outline-none focus:border-gray-600"
         >
           {categories.map((cat) => (
             <option key={cat.id} value={cat.id}>
@@ -128,8 +128,8 @@ export function NewProductForm({ categories }: Props) {
         <div
           className={`p-3 rounded-lg text-sm ${
             message.type === 'error'
-              ? 'bg-red-950 border border-red-900 text-red-400'
-              : 'bg-green-950 border border-green-900 text-green-400'
+              ? 'bg-[var(--bad-bg)] border border-[var(--bad)] text-[var(--bad)]'
+              : 'bg-[var(--good-bg)] border border-[var(--good)] text-[var(--good)]'
           }`}
         >
           {message.text}
@@ -140,7 +140,7 @@ export function NewProductForm({ categories }: Props) {
         <button
           type="submit"
           disabled={isLoading || !name.trim()}
-          className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 disabled:opacity-50 transition-colors"
+          className="px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full font-semibold hover:opacity-90 disabled:opacity-50 transition-colors"
         >
           {isLoading ? 'Creating...' : 'Create product'}
         </button>
@@ -184,7 +184,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-[var(--foreground)] placeholder-gray-600 focus:outline-none focus:border-gray-600"
+        className="w-full px-4 py-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-[var(--foreground)] placeholder-[var(--text-tertiary)] focus:outline-none focus:border-gray-600"
       />
     </div>
   )
