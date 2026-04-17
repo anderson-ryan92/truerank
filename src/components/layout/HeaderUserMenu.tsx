@@ -28,7 +28,7 @@ export function HeaderUserMenu({ displayName }: Props) {
     setIsOpen(false)
     const supabase = createSupabaseBrowserClient()
     await supabase.auth.signOut()
-    window.location.href = '/'
+    window.location.reload()
   }
 
   const initial = (displayName?.[0] || '?').toUpperCase()
