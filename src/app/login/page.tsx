@@ -58,8 +58,8 @@ export default function LoginPage() {
           <Link href="/" className="inline-block mb-6">
             <span className="font-serif text-2xl font-medium text-[var(--foreground)]">TrueRank</span>
           </Link>
-          <h1 className="text-3xl font-bold text-[var(--foreground)]">Welcome back</h1>
-          <p className="text-[var(--text-tertiary)] mt-2">Sign in to TrueRank</p>
+          <h1 className="text-3xl font-bold text-[var(--foreground)]">Get started</h1>
+          <p className="text-[var(--text-tertiary)] mt-2">Sign in or create an account</p>
         </div>
 
         <div className="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 space-y-3">
