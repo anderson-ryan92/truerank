@@ -25,10 +25,10 @@ export function HeaderUserMenu({ displayName }: Props) {
   }, [])
 
   async function handleSignOut() {
+    setIsOpen(false)
     const supabase = createSupabaseBrowserClient()
     await supabase.auth.signOut()
-    router.refresh()
-    router.push('/')
+    window.location.href = '/'
   }
 
   const initial = (displayName?.[0] || '?').toUpperCase()
