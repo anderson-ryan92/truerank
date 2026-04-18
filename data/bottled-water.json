@@ -1,0 +1,343 @@
+{
+  "category_slug": "bottled-water",
+  "methodology_version": "v1.0",
+  "products": [
+    {
+      "slug": "fiji-natural-artesian-water-500ml",
+      "image_url": "https://m.media-amazon.com/images/I/61bSnMiVkSL._AC_UF894,1000_QL80_.jpg",
+      "details": {
+        "subcategory": "Artesian Water",
+        "harmful_ingredients_count": 0,
+        "beneficial_ingredients_count": 6,
+        "microplastics_detected": null,
+        "pfas_detected": null,
+        "contaminants": [
+          {
+            "name": "Arsenic",
+            "amount": "0.001 mg/L",
+            "severity": "low",
+            "description": "Detected at 10% of FDA limit (0.01 mg/L). Naturally occurring in volcanic rock."
+          },
+          {
+            "name": "Antimony",
+            "amount": "0.0002 mg/L",
+            "severity": "low",
+            "description": "Detected at 3% of FDA limit (0.006 mg/L). Can leach from PET bottles."
+          },
+          {
+            "name": "Nitrate",
+            "amount": "0.25 mg/L",
+            "severity": "low",
+            "description": "Detected at 2.5% of FDA limit (10 mg/L). Naturally occurring."
+          }
+        ],
+        "minerals": [
+          {
+            "name": "Silica",
+            "amount": "85 mg/L",
+            "description": "Supports collagen production, skin elasticity, bone and connective tissue health."
+          },
+          {
+            "name": "Bicarbonate",
+            "amount": "140 mg/L",
+            "description": "Helps buffer acidity in the body, supports digestion."
+          },
+          {
+            "name": "Calcium",
+            "amount": "18 mg/L",
+            "description": "Essential for bone structure, muscle function, nerve signaling."
+          },
+          {
+            "name": "Magnesium",
+            "amount": "13 mg/L",
+            "description": "Supports enzymatic reactions, muscle and nerve function, bone health."
+          },
+          {
+            "name": "Sodium",
+            "amount": "16 mg/L",
+            "description": "Regulates fluid balance, nerve and muscle function."
+          },
+          {
+            "name": "Potassium",
+            "amount": "4.5 mg/L",
+            "description": "Supports cardiovascular health, nerve function, muscle contraction."
+          }
+        ],
+        "details": [
+          { "label": "Source", "value": "Natural artesian aquifer, Viti Levu, Fiji Islands" },
+          { "label": "Packaging", "value": "PET Plastic" },
+          { "label": "TDS", "value": "220 mg/L" },
+          { "label": "pH", "value": "7.61" },
+          { "label": "Fluoride", "value": "0.3 mg/L" },
+          { "label": "Filtration", "value": "Micron-filtered, UV disinfection" }
+        ],
+        "sources": [
+          {
+            "label": "Fiji Water 2023 CA Water Quality Report",
+            "url": "https://cdn.shopify.com/s/files/1/0051/7262/5477/files/2023_CA_Water_Quality_Report_English.pdf?v=1687195306"
+          }
+        ]
+      },
+      "scores": {
+        "contaminants_score": 88,
+        "potency_score": 90,
+        "transparency_score": 75,
+        "certifications_score": 70,
+        "notes": "Scored based on Fiji Water's published 2023 CA Water Quality Report. Trace arsenic (0.001 mg/L) and antimony (0.0002 mg/L) detected, both well within FDA limits. 2024 voluntary recall for elevated manganese and bacteria in specific Nov 2023 production batches factored into contaminants score. No PFAS or microplastics testing disclosed. No third-party certifications (NSF, etc.) listed. Independent TrueRank testing pending."
+      }
+    },
+    {
+      "slug": "evian-natural-spring-water-500ml",
+      "image_url": "https://m.media-amazon.com/images/I/51kVHzFOq4L._AC_UF894,1000_QL80_.jpg",
+      "details": {
+        "subcategory": "Natural Spring Water",
+        "harmful_ingredients_count": 0,
+        "beneficial_ingredients_count": 5,
+        "microplastics_detected": null,
+        "pfas_detected": null,
+        "contaminants": [],
+        "minerals": [
+          {
+            "name": "Calcium",
+            "amount": "80 mg/L",
+            "description": "Essential for bone structure, muscle function, nerve signaling, blood clotting."
+          },
+          {
+            "name": "Magnesium",
+            "amount": "26 mg/L",
+            "description": "Supports enzymatic reactions, muscle and nerve function, bone mineralization."
+          },
+          {
+            "name": "Bicarbonate",
+            "amount": "360 mg/L",
+            "description": "Helps buffer acidity in the body, supports digestive health."
+          },
+          {
+            "name": "Sodium",
+            "amount": "6.5 mg/L",
+            "description": "Very low sodium, favorable for low-sodium diets."
+          },
+          {
+            "name": "Potassium",
+            "amount": "1 mg/L",
+            "description": "Supports cardiovascular health, nerve function."
+          }
+        ],
+        "details": [
+          { "label": "Source", "value": "Cachat Spring, Evian-les-Bains, French Alps" },
+          { "label": "Packaging", "value": "PET Plastic (also available in glass)" },
+          { "label": "TDS", "value": "345 mg/L" },
+          { "label": "pH", "value": "7.2" },
+          { "label": "Fluoride", "value": "< 0.1 mg/L" },
+          { "label": "Filtration", "value": "Natural 15-year filtration through glacial sand" },
+          { "label": "Certification", "value": "NSF International tested" }
+        ],
+        "sources": [
+          {
+            "label": "Evian Water Quality Page",
+            "url": "https://www.evian.com/en_int/what-is-mineral-water/water-quality/"
+          },
+          {
+            "label": "Evian Annual Water Quality Report 2022",
+            "url": "https://www.evian.com/en_us/wp-content/themes/evian/assets/report_files/Evian_AWQR_for_2022_ENGLISH.pdf"
+          }
+        ]
+      },
+      "scores": {
+        "contaminants_score": 95,
+        "potency_score": 92,
+        "transparency_score": 85,
+        "certifications_score": 90,
+        "notes": "Scored based on Evian's published quality reports and NSF International testing. Strong mineral profile with notably high calcium (80 mg/L) and bicarbonate (360 mg/L). Very low sodium (6.5 mg/L). No contaminants reported. NSF International certified. Independent TrueRank testing pending."
+      }
+    },
+    {
+      "slug": "mountain-valley-spring-water-1l-glass",
+      "image_url": "https://m.media-amazon.com/images/I/51RGfnj5URL._AC_UF894,1000_QL80_.jpg",
+      "details": {
+        "subcategory": "Natural Spring Water",
+        "harmful_ingredients_count": 0,
+        "beneficial_ingredients_count": 5,
+        "microplastics_detected": null,
+        "pfas_detected": null,
+        "contaminants": [],
+        "minerals": [
+          {
+            "name": "Calcium",
+            "amount": "67 mg/L",
+            "description": "Essential for bone structure, muscle function, nerve signaling."
+          },
+          {
+            "name": "Magnesium",
+            "amount": "7.5 mg/L",
+            "description": "Supports enzymatic reactions, muscle and nerve function."
+          },
+          {
+            "name": "Bicarbonate",
+            "amount": "195 mg/L",
+            "description": "Helps buffer acidity, supports digestive health."
+          },
+          {
+            "name": "Sodium",
+            "amount": "2.8 mg/L",
+            "description": "Exceptionally low sodium."
+          },
+          {
+            "name": "Silica",
+            "amount": "9.2 mg/L",
+            "description": "Supports connective tissue and bone health."
+          }
+        ],
+        "details": [
+          { "label": "Source", "value": "Natural spring, Ouachita Mountains, Hot Springs, Arkansas" },
+          { "label": "Packaging", "value": "Glass" },
+          { "label": "TDS", "value": "220 mg/L" },
+          { "label": "pH", "value": "7.8" },
+          { "label": "Fluoride", "value": "0.1 mg/L" },
+          { "label": "History", "value": "Bottled since 1871, one of the oldest US bottled water brands" }
+        ],
+        "sources": [
+          {
+            "label": "Mountain Valley Water Quality",
+            "url": "https://www.mountainvalleyspring.com/water-quality"
+          }
+        ]
+      },
+      "scores": {
+        "contaminants_score": 93,
+        "potency_score": 88,
+        "transparency_score": 80,
+        "certifications_score": 65,
+        "notes": "Scored based on Mountain Valley's published water analysis. No contaminants reported. Good mineral profile with high calcium (67 mg/L) and very low sodium (2.8 mg/L). Glass packaging eliminates PET leaching risk. No third-party certifications (NSF, etc.) found in public data. Independent TrueRank testing pending."
+      }
+    },
+    {
+      "slug": "icelandic-glacial-natural-spring-water-500ml",
+      "image_url": "https://m.media-amazon.com/images/I/51xHJVcRCwL._AC_UF894,1000_QL80_.jpg",
+      "details": {
+        "subcategory": "Natural Spring Water",
+        "harmful_ingredients_count": 0,
+        "beneficial_ingredients_count": 4,
+        "microplastics_detected": null,
+        "pfas_detected": false,
+        "contaminants": [],
+        "minerals": [
+          {
+            "name": "Calcium",
+            "amount": "6.4 mg/L",
+            "description": "Lower than most mineral waters, contributes to soft taste."
+          },
+          {
+            "name": "Magnesium",
+            "amount": "2.4 mg/L",
+            "description": "Minimal magnesium content."
+          },
+          {
+            "name": "Sodium",
+            "amount": "5.5 mg/L",
+            "description": "Very low sodium."
+          },
+          {
+            "name": "Potassium",
+            "amount": "0.6 mg/L",
+            "description": "Trace amounts."
+          }
+        ],
+        "details": [
+          { "label": "Source", "value": "Olfus Spring, Heidarendi, Iceland" },
+          { "label": "Packaging", "value": "rPET (recycled PET), also available in Glass" },
+          { "label": "TDS", "value": "62 mg/L" },
+          { "label": "pH", "value": "8.4" },
+          { "label": "Fluoride", "value": "Not present" },
+          { "label": "Carbon Neutral", "value": "Certified CarbonNeutral for product and operations" },
+          { "label": "Sustainability", "value": "100% geothermal and hydroelectric powered" }
+        ],
+        "sources": [
+          {
+            "label": "Icelandic Glacial Our Water",
+            "url": "https://icelandicglacial.com/pages/our-water"
+          },
+          {
+            "label": "Icelandic Glacial Credentials",
+            "url": "https://icelandicglacial.com/pages/credentials"
+          },
+          {
+            "label": "Icelandic Glacial FAQ",
+            "url": "https://icelandicglacial.com/pages/faq"
+          }
+        ]
+      },
+      "scores": {
+        "contaminants_score": 97,
+        "potency_score": 60,
+        "transparency_score": 82,
+        "certifications_score": 85,
+        "notes": "Scored based on Icelandic Glacial's published water analysis and credentials. Exceptionally pure water with very low TDS (62 mg/L) and naturally alkaline pH (8.4). No fluoride, no contaminants reported. Low mineral content is a feature for taste but provides minimal nutritional benefit compared to mineral-rich waters. CarbonNeutral certified. Independent TrueRank testing pending."
+      }
+    },
+    {
+      "slug": "gerolsteiner-sparkling-mineral-water-750ml",
+      "image_url": "https://m.media-amazon.com/images/I/81M-VgChtaL._AC_UF894,1000_QL80_.jpg",
+      "details": {
+        "subcategory": "Sparkling Mineral Water",
+        "harmful_ingredients_count": 0,
+        "beneficial_ingredients_count": 5,
+        "microplastics_detected": null,
+        "pfas_detected": null,
+        "contaminants": [],
+        "minerals": [
+          {
+            "name": "Calcium",
+            "amount": "348 mg/L",
+            "description": "Exceptionally high. 35% of daily value per liter. Essential for bones, teeth, muscle function."
+          },
+          {
+            "name": "Magnesium",
+            "amount": "108 mg/L",
+            "description": "Very high. 26% of daily value per liter. Supports nerve, muscle, and enzymatic function."
+          },
+          {
+            "name": "Bicarbonate",
+            "amount": "1817 mg/L",
+            "description": "Exceptionally high. Excellent natural buffer for digestive health."
+          },
+          {
+            "name": "Sodium",
+            "amount": "118 mg/L",
+            "description": "Moderate. Higher than still waters but natural for high-mineral sparkling."
+          },
+          {
+            "name": "Potassium",
+            "amount": "11 mg/L",
+            "description": "Good trace amounts for electrolyte balance."
+          }
+        ],
+        "details": [
+          { "label": "Source", "value": "Volcanic Eifel region, Germany" },
+          { "label": "Packaging", "value": "Glass (750ml), also available in PET" },
+          { "label": "TDS", "value": "2527 mg/L" },
+          { "label": "pH", "value": "5.9" },
+          { "label": "Carbonation", "value": "Naturally carbonated" },
+          { "label": "Regulation", "value": "German Mineral and Table Water Ordinance (stricter than FDA)" }
+        ],
+        "sources": [
+          {
+            "label": "Gerolsteiner Mineral Analysis",
+            "url": "https://www.gerolsteiner.de/en/mineral-water/mineral-analysis/"
+          },
+          {
+            "label": "Gerolsteiner Water Composition",
+            "url": "https://www.gerolsteiner.de/en/mineral-water/"
+          }
+        ]
+      },
+      "scores": {
+        "contaminants_score": 92,
+        "potency_score": 98,
+        "transparency_score": 78,
+        "certifications_score": 75,
+        "notes": "Scored based on Gerolsteiner's published mineral analysis. Exceptional mineral content: 348 mg/L calcium (more than most calcium supplements) and 108 mg/L magnesium. Naturally carbonated from volcanic source. German Mineral Water Ordinance is stricter than FDA but no NSF or similar third-party certification. Higher sodium (118 mg/L) and very high TDS (2527 mg/L) may not suit all consumers. Independent TrueRank testing pending."
+      }
+    }
+  ]
+}
