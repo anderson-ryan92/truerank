@@ -63,12 +63,14 @@ export default async function HomePage() {
         <h1 className="font-serif text-6xl md:text-7xl font-medium mb-5 tracking-tight text-[var(--foreground)]">
           TrueRank
         </h1>
+        <p className="text-2xl md:text-3xl font-medium text-[var(--foreground)] mb-4 max-w-2xl mx-auto">
+          We test what brands won't show you.
+        </p>
         <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-xl mx-auto">
-          Independent lab testing. Full chain of custody. Real data.
+          Real lab results. Real data. No brand influence.
         </p>
         <SearchBar />
       </header>
-
       <section>
         <div className="flex items-baseline justify-between mb-6">
           <h2 className="text-xs font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">
@@ -97,27 +99,6 @@ export default async function HomePage() {
                 <div className="text-xs text-[var(--text-tertiary)] uppercase tracking-wider">View →</div>
               </div>
 
-              {topProduct && topScore !== null ? (
-                <div className="flex items-center gap-4 pt-4 border-t border-[var(--border)]">
-                  <div className="w-12 h-12 bg-[var(--background)] border border-[var(--border)] rounded-lg flex items-center justify-center overflow-hidden">
-                    {topProduct.image_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={topProduct.image_url} alt={topProduct.name} className="w-full h-full object-contain p-1.5" />
-                    ) : null}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-[var(--text-tertiary)] uppercase tracking-wider mb-0.5">No. 1</p>
-                    <p className="text-sm font-medium truncate text-[var(--foreground)]">{topProduct.name}</p>
-                  </div>
-                  <div className="text-2xl font-medium tabular-nums tracking-tight text-[var(--foreground)]">
-                    {topScore}
-                  </div>
-                </div>
-              ) : (
-                <div className="pt-4 border-t border-[var(--border)] text-xs text-[var(--text-tertiary)]">
-                  Testing coming soon
-                </div>
-              )}
             </Link>
           ))}
         </div>
